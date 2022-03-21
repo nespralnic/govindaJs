@@ -121,6 +121,7 @@ function modal(){
         
         //condición sobre los campos required
         if ((campoNombre.value != "") && (campoTelefono.value != "")){
+            e.preventDefault();
 
             //oculta el modal
             modalBg.classList.remove("modal-bg--active");
