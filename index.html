@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Contrail+One&family=Dongle:wght@300&family=Montserrat:wght@400;500;600&family=Oswald:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="fondo">
+        <section class="containerGeneral">
+            <div id="containerIzquierda"></div>
+            <div id="containerDerecha">
+                <p class="bienvenido">Bienvenido a </p>
+                <p class="bienvenido1">Govinda Pedidos</p>
+            </div>
+        </section>
+        <div class="modal-bg">
+            <div class="modal">
+                 <img class="modal__logo" src="assets/Govinda-negativo-negro base.svg" alt="" height="70" width="70">
+                <h3 id="consultanos">Consultanos si tenés alguna dieta especial.</h3>
+                <form action="#">
+                    <input class="inputsForm"  type="text" id="nombre" placeholder="nombre" required>
+                    <input class="inputsForm"  type="text"  id="telefono" placeholder="teléfono" required>
+                    <textarea class="textarea" id="textarea" placeholder="mensaje"></textarea>
+                    <label class="legales">*Tras confirmar acordaremos forma de pago y delivery </label>
+                    <div class="modal__botones">
+                        <button class="btnConfirmar modal__botones__ficha" type="submit">CONFIRMAR</button>
+                        <button class="btnCancelar modal__botones__ficha">CANCELAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script src="js/functions.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>

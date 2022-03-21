@@ -1,0 +1,314 @@
+
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(assets/bici3.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.fondo{
+    margin: 5vh auto;
+    height: 90vh;
+    width: 95vw;
+    background-color: rgba(245, 245, 220, 0.74);
+}
+
+.containerGeneral{
+    
+    width: 90vw;
+    /*background-color: darksalmon;*/
+    display: flex;
+}
+
+@media (max-width: 800px){
+    body{
+        background-size:auto;
+    }
+
+    .fondo{
+        margin: 5vh auto;
+        height: 90%;
+        width: 95vw;
+        padding-bottom: 20px;
+        background-color: rgba(245, 245, 220, 0.74);
+    }
+    
+    .containerGeneral{
+        flex-direction: column;
+    }
+
+    #containerDerecha{
+        
+        justify-self: left;
+        padding: 18px 0 0 18px;
+    }
+
+    
+}
+
+#containerIzquierda{
+    list-style: none;
+    justify-self: left;
+    width: 420px;
+    padding: 18px 0 0 18px;
+}
+
+#containerDerecha{
+    padding: 18px 0 0 18px;
+    margin: 0 auto;
+}
+
+.bienvenido{
+
+    animation-name: descolorear;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+
+}
+
+.bienvenido1{
+    font-family: 'Contrail One', cursive;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+    animation-duration: 2s;
+    animation-name: colorear;
+
+    
+    font-size: 28px;
+}
+
+@keyframes colorear{
+    from{color: transparent;}
+    to{color:rgb(124, 79, 64);} 
+}
+
+@keyframes descolorear{
+    0%{color:transparent}
+    30%{color:rgb(124, 79, 64);}
+    90%{color:rgb(124, 79, 64);}
+    100%{color: transparent;} 
+}
+
+.listaTitulo{
+    width: fit-content;
+    cursor:pointer;
+
+}
+
+.listaTitulo2, .listaTitulo:hover{
+    background-color: rgba(240, 186, 70, 0.336);
+    color: white;
+    width:100%;
+    transition: 0.7s;
+}
+
+
+
+
+.listaProductos{
+    display: grid;
+    grid-template-columns: 220px 1fr 1fr;
+}
+
+.listaProductos span{
+    background-color: rgba(240, 186, 70, 0.336);
+    /*border: 1px solid rgb(124, 79, 64);*/
+    padding: 5px;
+}
+
+.claseToast{
+    background: rgba(240, 186, 70, 0.337);
+    height: 50px;
+    width: 225px;
+    font-size: 20px;
+    font-family: 'Contrail One', cursive;
+}
+
+.claseToast2{
+    background: #f0ba4656;
+    height: 100px;
+    width: 200px;
+    font-size: 20px;
+    font-family: 'Contrail One', cursive;
+}
+
+/*https://codepen.io/rkoms/pen/OJbrGKX*/
+.number{
+    display: flex;
+    background-color: none;
+    
+}
+.minus, .plus{
+    cursor:pointer;
+    width:20px;
+    background-color: black;
+    border-radius:4px;
+    padding:8px 5px 8px 5px;
+    border:1px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.inputCantidad{
+    /*height:34px;*/
+    width: 50px;
+    text-align: center;
+    font-size: 14px;
+    border:1px solid #ddd;
+    border-radius:4px;  
+    display: inline-block;
+    vertical-align: middle;
+    pointer-events: none;
+}
+
+
+
+#contenedorCarrito{
+    
+    background-color: rgba(240, 186, 70, 0.336);    
+    border: 1px solid #7c4f40;
+    padding: 5px;
+    display: grid;
+    /* item cantidad precioUnit subtotal*/
+    grid-template-columns: 220px 30px 64px 64px;
+    grid-auto-rows: 15px;
+    gap:6px;
+    text-align: left;
+}
+
+.botonEnviar{
+    background-image: linear-gradient(to right,rgba(199, 195, 195, 0.767),rgba(117, 116, 116, 0.685));
+    width: 40%;
+    height: 30px;
+    color: black;
+    font-size: 20px;
+    border:0;
+    border-radius: 6px;
+
+}
+
+.botonEnviar:hover{
+    background-image: linear-gradient(to right,rgba(199, 195, 195, 0.767),rgba(199, 195, 195, 0.767));
+    cursor: pointer;
+}
+
+p{
+    font-size: 25px;
+    color: rgb(124, 79, 64);
+    
+}
+
+input{
+    width:40px;
+}
+
+.modal-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    background-color: rgba(0, 0, 0, 0.377);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity:0;
+    transition: opacity 0.4s;
+    
+    
+}
+
+.modal-bg--active{
+    visibility: visible;
+    opacity: 1;
+    
+    
+}
+
+.modal{
+    
+    
+    background-image: linear-gradient(to right, rgba(240, 186, 70, 0.336),rgba(240, 186, 70));
+    background-color: rgba(240, 186, 70, 0.336);   
+    
+    border-radius: 8px;
+    width: 300px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.modal__logo{
+    opacity:60%;
+}
+
+#consultanos{
+    font-family: 'Contrail One', cursive;
+    opacity: 60%;
+}
+
+.modal__botones{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__botones__ficha{
+    
+    background-image: linear-gradient(to right,rgb(199, 195, 195),rgb(175, 174, 174));
+    background-color: none;
+    width: 40%;
+    height: 30px;
+    color: black;
+    border:0;
+}
+
+.modal__botones__ficha:hover{
+    background-image: linear-gradient(to right,rgb(199, 195, 195),rgb(199, 195, 195));
+    cursor: pointer;
+}
+
+.textarea{
+
+    width: 260px;
+    height: 100px;
+    background-color:rgb(175, 174, 174);   
+    border:0;
+    padding: 4px;
+}
+
+.textarea:focus{
+    background-color: rgb(199, 195, 195);
+    outline: 0;
+}
+
+.inputsForm{
+    width: 260px;
+    background-color:rgb(175, 174, 174) ;
+    border: 0;
+    padding: 4px;
+    margin-bottom: 4px;
+}
+
+.inputsForm:focus{
+    background-color: rgb(199, 195, 195);
+    outline: 0;
+}
+
+.legales{
+    display: inline-block;
+    font-size: 10px;
+}
